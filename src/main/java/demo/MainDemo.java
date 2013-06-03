@@ -19,9 +19,9 @@ public class MainDemo {
         log.info("main() - run - n: {}, pool: {}", n, pool);
         pool.submit(new Sleeper(5, "I'm in, holding the slot for 5s"));
         pool.submit(new Sleeper(10, "I'm in, holding the slot for 10s"));
-        pool.submit(new Sleeper(15, "I can get in now after the 5s guy is done"));
+        pool.submit(new Sleeper(5, "I can get in now after the 5s guy is done"));
         Thread.sleep(20000);
-        pool.shutdownNow();
+        pool.shutdown();
     }
 
 
